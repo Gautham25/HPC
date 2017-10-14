@@ -9,6 +9,12 @@ double randomNumber(int ubound, int lbound){
     return s;
 }
 
+void copyMatrix(double *a, double *b, int n){
+    int i;
+    for(i=0; i< n*n;i++){
+        b[i]=a[i];
+    }
+}
 
 double* assignMatVal(double *a, int n, int ubound, int lbound){
     int i;
@@ -21,7 +27,7 @@ double* assignMatVal(double *a, int n, int ubound, int lbound){
 void calcPerformance(clock_t start, clock_t end,int n){
     printf("Matrix Size = %d\n",n);
     double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken = %.10f\n",time);
+    printf("Time taken in seconds = %.10f\n",time);
     double perfomance = 2*((double)pow(n,3))/(time*pow(10,9));
     printf("Performance in GFLOPS = %.10f\n",perfomance);
     printf("\n");
@@ -317,10 +323,42 @@ void dgemm2(double *a, double *b, double *c, int n){
     calcPerformance(start,end,n);
 }
 
+void regCacheMat(double *a, double *b, double *c, int n, int B){
+    int i,j,k,i1,j1,k1;
+    for (i = 0; i < n; i+=B){
+        for (j = 0; j < n; j+=B){
+            for (k = 0; k < n; k+=B){
+     /* B x B mini matrix multiplications */
+                for (i1 = i; i1 < i+B; i1++){
+                    for (j1 = j; j1 < j+B; j1++){
+                        register int t = i1*n+j1; register int tt = t+n;
+                        register double c00 = c[t]; register double c01 = c[t+1];  register double c10 = c[tt]; register double c11 = c[tt+1];
+                        for (k1 = k; k1 < k+B; k1++){
+                            register int ta = i1*n+k1; register int tta = ta+n; register int tb = k1*n+j1; register int ttb = tb+n;
+                            register double a00 = a[ta]; register double a01 = a[ta+1]; register double a10 = a[tta]; register double a11 = a[tta+1];
+                            register double b00 = b[tb]; register double b01 = b[tb+1]; register double b10 = b[ttb]; register double b11 = b[ttb+1];
+                            c00 += a00*b00 + a01*b10;
+                            c01 += a00*b01 + a01*b11;
+                            c10 += a10*b00 + a11*b10;
+                            c11 += a10*b01 + a11*b11;
+                        }
+                        c[t] = c00;
+                        c[t+1] = c01;
+                        c[tt] = c10;
+                        c[tt+1] = c11;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
 int main(){
     int i,B,n;
     double *arrA,*arrB,*arrC0, *arrC1, * arrC2;
-    double arrN[] = {64};//,128,256,512,1024,2048};
+    double arrN[] = {64,128,256,512,1024,2048};
     srand((double)time(NULL));
     int ubound = 100, lbound = 1;
     int len = (sizeof(arrN)/sizeof(arrN[0]));
@@ -333,6 +371,9 @@ int main(){
         arrC2 = (double *)calloc(sizeof(double), n*n);
         arrA = assignMatVal(arrA,n,ubound,lbound);
         arrB = assignMatVal(arrB,n,ubound,lbound);
+        arrC0 = assignMatVal(arrC0,n,ubound,lbound);
+        copyMatrix(arrC0,arrC1,n);
+        copyMatrix(arrC0,arrC2,n);
 		dgemm0(arrA,arrB,arrC0,n);
         dgemm1(arrA,arrB,arrC1,n);
 		dgemm2(arrA,arrB,arrC2,n);
@@ -355,6 +396,9 @@ int main(){
     arrC2 = (double *)calloc(sizeof(double), n*n);
     arrA = assignMatVal(arrA,n,ubound,lbound);
     arrB = assignMatVal(arrB,n,ubound,lbound);
+    arrC0 = assignMatVal(arrC0,n,ubound,lbound);
+    copyMatrix(arrC0,arrC1,n);
+    copyMatrix(arrC0,arrC2,n);
 
     //Triple loop matrix multiplications
     printf("\nTRIPLE LOOP MATRIX MULTIPLICATIONS\n");
@@ -367,6 +411,7 @@ int main(){
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matTriplekij(arrA,arrB,arrC0,n);
     printf("\nMatrix Configs: jik & kij\n");
     findCorrectness(arrC0,arrC1,n);
@@ -374,6 +419,7 @@ int main(){
     free(arrC1);
 
     arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
     matTripleikj(arrA,arrB,arrC1,n);
     printf("\nMatrix Configs: kij & ikj\n");
     findCorrectness(arrC0,arrC1,n);
@@ -381,6 +427,7 @@ int main(){
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matTriplejki(arrA,arrB,arrC0,n);
     printf("\nMatrix Configs: ikj & jki\n");
     findCorrectness(arrC0,arrC1,n);
@@ -388,6 +435,7 @@ int main(){
     free(arrC1);
 
     arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
     matTriplekji(arrA,arrB,arrC1,n);
     printf("\nMatrix Configs: jki & kji\n");
     findCorrectness(arrC0,arrC1,n);
@@ -395,6 +443,7 @@ int main(){
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matTripleikj(arrA,arrB,arrC0,n);
     printf("\nMatrix Configs: kji & ikj\n");
     findCorrectness(arrC0,arrC1,n);
@@ -405,51 +454,61 @@ int main(){
     //Blocked matrix multiplications
     arrC0 = (double *)calloc(sizeof(double), n*n);
     arrC1 = (double *)calloc(sizeof(double), n*n);
+    arrC2 = (double *)calloc(sizeof(double), n*n);
+    arrC0 = assignMatVal(arrC0, n, ubound, lbound);
+    copyMatrix(arrC0,arrC1,n);
+    copyMatrix(arrC0,arrC2,n);
     printf("\nBLOCKED MATRIX MULTIPLICATIONS\n");
     matBlockijk(arrA,arrB,arrC0,n,B);
     printf("\n");
     matBlockjik(arrA,arrB,arrC1,n,B);
-    printf("\nMatrix Configs: Blocked ijk & jik\n");
+    printf("\nMatrix Configs: Block ijk & jik\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matBlockkij(arrA,arrB,arrC0,n,B);
-    printf("\nMatrix Configs: Blocked jik & kij\n");
+    printf("\nMatrix Configs: Block jik & kij\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC1);
 
     arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
     matBlockikj(arrA,arrB,arrC1,n,B);
-    printf("\nMatrix Configs: Blocked kij & ikj\n");
+    printf("\nMatrix Configs: Block kij & ikj\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matBlockjki(arrA,arrB,arrC0,n,B);
-    printf("\nMatrix Configs: Blocked ikj & jki\n");
+    printf("\nMatrix Configs: Block ikj & jki\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC1);
 
     arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
     matBlockkji(arrA,arrB,arrC1,n,B);
-    printf("\nMatrix Configs: Blocked jki & kji\n");
+    printf("\nMatrix Configs: Block jki & kji\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC0);
 
     arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
     matBlockikj(arrA,arrB,arrC0,n,B);
-    printf("\nMatrix Configs: Blocked kji & ikj\n");
+    printf("\nMatrix Configs: Block kji & ikj\n");
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrA);
     free(arrB);
     free(arrC0);
     free(arrC1);
+    free(arrC2);
 	return 0;
 }
