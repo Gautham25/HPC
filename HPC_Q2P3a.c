@@ -37,7 +37,7 @@ void calcExecutionTime(clock_t start, clock_t end,int n, char s[]){
     printf("Matrix Size = %d\n",n);
     printf("Matrix Config = %s\n", s);
     double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken in seconds = %.10f\n",time);
+    printf("Time taken in seconds = %.10f s\n",time);
 }
 
 void findCorrectness(double *a, double *b,int n){
