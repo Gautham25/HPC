@@ -1,0 +1,250 @@
+
+BLOCKED MATRIX MULTIPLICATIONS
+
+Block Size= 16
+Matrix Size = 2048
+Matrix Config = Block ijk
+Time taken in seconds = 117.2100000000
+
+Matrix Size = 2048
+Matrix Config = Block jik
+Time taken in seconds = 105.2000000000
+
+Matrix Configs: Block ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kij
+Time taken in seconds = 88.0100000000
+
+Matrix Configs: Block jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 97.7400000000
+
+Matrix Configs: Block kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block jki
+Time taken in seconds = 137.5300000000
+
+Matrix Configs: Block ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kji
+Time taken in seconds = 136.2300000000
+
+Matrix Configs: Block jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 97.5100000000
+
+Matrix Configs: Block kji & ikj
+Error = 0.000000
+
+
+BLOCKED MATRIX MULTIPLICATIONS
+
+Block Size= 32
+Matrix Size = 2048
+Matrix Config = Block ijk
+Time taken in seconds = 111.2300000000
+
+Matrix Size = 2048
+Matrix Config = Block jik
+Time taken in seconds = 97.0600000000
+
+Matrix Configs: Block ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kij
+Time taken in seconds = 82.1600000000
+
+Matrix Configs: Block jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 85.9000000000
+
+Matrix Configs: Block kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block jki
+Time taken in seconds = 120.6800000000
+
+Matrix Configs: Block ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kji
+Time taken in seconds = 112.7300000000
+
+Matrix Configs: Block jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 74.9200000000
+
+Matrix Configs: Block kji & ikj
+Error = 0.000000
+
+
+BLOCKED MATRIX MULTIPLICATIONS
+
+Block Size= 64
+Matrix Size = 2048
+Matrix Config = Block ijk
+Time taken in seconds = 99.7800000000
+
+Matrix Size = 2048
+Matrix Config = Block jik
+Time taken in seconds = 83.1600000000
+
+Matrix Configs: Block ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kij
+Time taken in seconds = 72.4800000000
+
+Matrix Configs: Block jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 77.3100000000
+
+Matrix Configs: Block kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block jki
+Time taken in seconds = 111.0500000000
+
+Matrix Configs: Block ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kji
+Time taken in seconds = 109.3100000000
+
+Matrix Configs: Block jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 75.9900000000
+
+Matrix Configs: Block kji & ikj
+Error = 0.000000
+
+
+BLOCKED MATRIX MULTIPLICATIONS
+
+Block Size= 128
+Matrix Size = 2048
+Matrix Config = Block ijk
+Time taken in seconds = 99.0300000000
+
+Matrix Size = 2048
+Matrix Config = Block jik
+Time taken in seconds = 85.4300000000
+
+Matrix Configs: Block ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kij
+Time taken in seconds = 70.9100000000
+
+Matrix Configs: Block jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 75.7200000000
+
+Matrix Configs: Block kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block jki
+Time taken in seconds = 110.7200000000
+
+Matrix Configs: Block ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kji
+Time taken in seconds = 112.0200000000
+
+Matrix Configs: Block jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 75.0100000000
+
+Matrix Configs: Block kji & ikj
+Error = 0.000000
+
+
+BLOCKED MATRIX MULTIPLICATIONS
+
+Block Size= 256
+Matrix Size = 2048
+Matrix Config = Block ijk
+Time taken in seconds = 99.1600000000
+
+Matrix Size = 2048
+Matrix Config = Block jik
+Time taken in seconds = 130.8900000000
+
+Matrix Configs: Block ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kij
+Time taken in seconds = 86.4800000000
+
+Matrix Configs: Block jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 94.6900000000
+
+Matrix Configs: Block kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block jki
+Time taken in seconds = 183.2600000000
+
+Matrix Configs: Block ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block kji
+Time taken in seconds = 180.2000000000
+
+Matrix Configs: Block jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = Block ikj
+Time taken in seconds = 95.5300000000
+
+Matrix Configs: Block kji & ikj
+Error = 0.000000
+
