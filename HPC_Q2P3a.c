@@ -27,7 +27,7 @@ double* assignMatVal(double *a, int n, int ubound, int lbound){
 void calcPerformance(clock_t start, clock_t end,int n){
     printf("Matrix Size = %d\n",n);
     double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken in seconds = %.10f\n",time);
+    printf("Time taken in seconds = %.10f s\n",time);
     double perfomance = 2*((double)pow(n,3))/(time*pow(10,9));
     printf("Performance in GFLOPS = %.10f\n",perfomance);
     printf("\n");
