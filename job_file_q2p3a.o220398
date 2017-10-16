@@ -1,0 +1,55 @@
+
+TRIPLE LOOP MATRIX MULTIPLICATIONS
+Matrix Size = 2048
+Matrix Config = ijk
+Time taken in seconds = 293.3200000000
+Performance in GFLOPS = 0.0585703981
+
+Matrix Size = 2048
+Matrix Config = jik
+Time taken in seconds = 311.5700000000
+Performance in GFLOPS = 0.0551396771
+
+Matrix Configs: ijk & jik
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = kij
+Time taken in seconds = 103.2500000000
+Performance in GFLOPS = 0.1663909848
+
+Matrix Configs: jik & kij
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = ikj
+Time taken in seconds = 103.0600000000
+Performance in GFLOPS = 0.1666977410
+
+Matrix Configs: kij & ikj
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = jki
+Time taken in seconds = 524.8500000000
+Performance in GFLOPS = 0.0327329126
+
+Matrix Configs: ikj & jki
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = kji
+Time taken in seconds = 540.2500000000
+Performance in GFLOPS = 0.0317998504
+
+Matrix Configs: jki & kji
+Error = 0.000000
+
+Matrix Size = 2048
+Matrix Config = ikj
+Time taken in seconds = 104.0900000000
+Performance in GFLOPS = 0.1650482197
+
+Matrix Configs: kji & ikj
+Error = 0.000000
+
