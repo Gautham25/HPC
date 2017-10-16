@@ -16,28 +16,26 @@ void copyMatrix(double *a, double *b, int n){
     }
 }
 
-double* assignMatVal(double *a, int n, int ubound, int lbound){
+void assignMatVal(double *a, int n, int ubound, int lbound){
     int i;
     for(i=0;i<n*n;i++){
         a[i] = randomNumber(ubound, lbound);
     }
-    return a;
 }
 
-void calcPerformance(clock_t start, clock_t end,int n){
-    printf("Matrix Size = %d\n",n);
-    double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken = %.10f\n",time);
+void calcPerformance(double time,int n){
+
+//    double time = ((double)(end-start))/CLOCKS_PER_SEC;
+//    printf("Time taken in seconds = %f s\n",time);
     double perfomance = 2*((double)pow(n,3))/(time*pow(10,9));
-    printf("Performance in GFLOPS = %.10f\n",perfomance);
-    printf("\n");
+    printf("Performance in GFLOPS = %e\n",perfomance);
 }
 
 void calcExecutionTime(clock_t start, clock_t end,int n, char s[]){
     printf("Matrix Size = %d\n",n);
     printf("Matrix Config = %s\n", s);
     double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken = %.10f\n",time);
+    printf("Time taken in seconds = %.10f\n",time);
 }
 
 void findCorrectness(double *a, double *b,int n){
@@ -47,13 +45,13 @@ void findCorrectness(double *a, double *b,int n){
         if(error < abs(a[i]-b[i]))
             error = abs(a[i]-b[i]);
     }
-    printf("Correctness = %f\n",error);
+    printf("Error = %f\n",error);
 }
 
 void dgemm0(double *a, double *b, double *c, int n){
-    clock_t start,end;
     int i,j,k;
-    start = clock();
+    struct timespec tstart={0,0}, tend={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &tstart);
     for (i=0; i<n; i++ ){
         for (j=0; j<n; j++ ){
             for (k=0; k<n; k++ ){
@@ -61,15 +59,18 @@ void dgemm0(double *a, double *b, double *c, int n){
             }
         }
     }
-    end = clock();
-    printf("Algorithm: dgemm0\n");
-    calcPerformance(start,end,n);
+    clock_gettime(CLOCK_MONOTONIC, &tend);
+    double time =((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec);
+    printf("\nAlgorithm: dgemm0\n");
+    printf("Matrix Size = %d\n",n);
+    printf("Time Taken = %.5f seconds\n",time);
+    calcPerformance(time,n);
 }
 
 void dgemm1(double *a, double *b, double *c, int n){
-    clock_t start,end;
     int i,j,k;
-    start = clock();
+    struct timespec tstart={0,0}, tend={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &tstart);
     for (i=0; i<n; i++ ){
         for (j=0; j<n; j++ ){
             register double r = c[i*n+j];
@@ -79,15 +80,18 @@ void dgemm1(double *a, double *b, double *c, int n){
             c[i*n+j] = r;
         }
     }
-    end = clock();
-    printf("Algorithm: dgemm1\n");
-    calcPerformance(start,end,n);
+    clock_gettime(CLOCK_MONOTONIC, &tend);
+    double time =((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec);
+    printf("\nAlgorithm: dgemm1\n");
+    printf("Matrix Size = %d\n",n);
+    printf("Time Taken = %.5f seconds\n",time);
+    calcPerformance(time,n);
 }
 
 void dgemm2(double *a, double *b, double *c, int n){
-    clock_t start,end;
     int i,j,k;
-    start = clock();
+    struct timespec tstart={0,0}, tend={0,0};
+    clock_gettime(CLOCK_MONOTONIC, &tstart);
     for (i=0; i<n; i+=2 ){
         for (j=0; j<n; j+=2 ){
             register int t = i*n+j;register int tt = t+n;
@@ -107,9 +111,12 @@ void dgemm2(double *a, double *b, double *c, int n){
             c[tt+1] = c11;
         }
     }
-    end = clock();
-    printf("Algorithm: dgemm2\n");
-    calcPerformance(start,end,n);
+    clock_gettime(CLOCK_MONOTONIC, &tend);
+    double time =((double)tend.tv_sec + 1.0e-9*tend.tv_nsec) - ((double)tstart.tv_sec + 1.0e-9*tstart.tv_nsec);
+    printf("\nAlgorithm: dgemm2\n");
+    printf("Matrix Size = %d\n",n);
+    printf("Time Taken = %.5f seconds\n",time);
+    calcPerformance(time,n);
 }
 
 int main(){
@@ -120,27 +127,27 @@ int main(){
     int ubound = 100, lbound = 1;
     int len = (sizeof(arrN)/sizeof(arrN[0]));
     for(i=0;i<len;i++){
-		n = arrN[i];
-		arrA = (double *)calloc(sizeof(double), n*n);
-		arrB = (double *)calloc(sizeof(double), n*n);
-		arrC0 = (double *)calloc(sizeof(double), n*n);
+	n = arrN[i];
+	arrA = (double *)calloc(sizeof(double), n*n);
+	arrB = (double *)calloc(sizeof(double), n*n);
+	arrC0 = (double *)calloc(sizeof(double), n*n);
         arrC1 = (double *)calloc(sizeof(double), n*n);
         arrC2 = (double *)calloc(sizeof(double), n*n);
-        arrA = assignMatVal(arrA,n,ubound,lbound);
-        arrB = assignMatVal(arrB,n,ubound,lbound);
-        arrC0 = assignMatVal(arrC0,n,ubound,lbound);
+        assignMatVal(arrA,n,ubound,lbound);
+        assignMatVal(arrB,n,ubound,lbound);
+        assignMatVal(arrC0,n,ubound,lbound);
         copyMatrix(arrC0,arrC1,n);
         copyMatrix(arrC0,arrC2,n);
-		dgemm0(arrA,arrB,arrC0,n);
+	dgemm0(arrA,arrB,arrC0,n);
         dgemm1(arrA,arrB,arrC1,n);
-		dgemm2(arrA,arrB,arrC2,n);
+	dgemm2(arrA,arrB,arrC2,n);
         printf("\nMatrix Config = dgemm0 & dgemm1\n");
         findCorrectness(arrC0,arrC1,arrN[i]);
         printf("\nMatrix Config = dgemm1 & dgemm2\n");
         findCorrectness(arrC1,arrC2,arrN[i]);
-		free(arrA);
-		free(arrB);
-		free(arrC0);
+	free(arrA);
+	free(arrB);
+	free(arrC0);
         free(arrC1);
         free(arrC2);
     }
