@@ -1,0 +1,6 @@
+ -l nodes=1:ppn=1,walltime=01:30:00
+
+JOB_PATH=/home/gmani001/HPC
+cd $JOB_PATH
+./HPC_Q2P4O01
+i

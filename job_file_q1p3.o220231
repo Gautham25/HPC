@@ -1,0 +1,174 @@
+
+Algorithm: dgemm3
+Matrix Size = 66
+Time Taken = 0.00116 seconds
+Performance in GFLOPS = 4.957944e-01
+
+Algorithm: dgemm0
+Matrix Size = 66
+Time Taken = 0.00422 seconds
+Performance in GFLOPS = 1.363018e-01
+
+Algorithm: dgemm1
+Matrix Size = 66
+Time Taken = 0.00287 seconds
+Performance in GFLOPS = 2.000122e-01
+
+Algorithm: dgemm2
+Matrix Size = 66
+Time Taken = 0.00137 seconds
+Performance in GFLOPS = 4.188373e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm3
+Matrix Size = 132
+Time Taken = 0.00948 seconds
+Performance in GFLOPS = 4.851224e-01
+
+Algorithm: dgemm0
+Matrix Size = 132
+Time Taken = 0.03938 seconds
+Performance in GFLOPS = 1.168091e-01
+
+Algorithm: dgemm1
+Matrix Size = 132
+Time Taken = 0.02646 seconds
+Performance in GFLOPS = 1.738154e-01
+
+Algorithm: dgemm2
+Matrix Size = 132
+Time Taken = 0.01151 seconds
+Performance in GFLOPS = 3.995754e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm3
+Matrix Size = 258
+Time Taken = 0.08684 seconds
+Performance in GFLOPS = 3.955026e-01
+
+Algorithm: dgemm0
+Matrix Size = 258
+Time Taken = 0.36590 seconds
+Performance in GFLOPS = 9.387107e-02
+
+Algorithm: dgemm1
+Matrix Size = 258
+Time Taken = 0.22304 seconds
+Performance in GFLOPS = 1.539957e-01
+
+Algorithm: dgemm2
+Matrix Size = 258
+Time Taken = 0.10564 seconds
+Performance in GFLOPS = 3.251376e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm3
+Matrix Size = 516
+Time Taken = 0.78797 seconds
+Performance in GFLOPS = 3.487125e-01
+
+Algorithm: dgemm0
+Matrix Size = 516
+Time Taken = 3.41435 seconds
+Performance in GFLOPS = 8.047678e-02
+
+Algorithm: dgemm1
+Matrix Size = 516
+Time Taken = 2.11723 seconds
+Performance in GFLOPS = 1.297811e-01
+
+Algorithm: dgemm2
+Matrix Size = 516
+Time Taken = 0.98709 seconds
+Performance in GFLOPS = 2.783699e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm3
+Matrix Size = 1026
+Time Taken = 5.24721 seconds
+Performance in GFLOPS = 4.116644e-01
+
+Algorithm: dgemm0
+Matrix Size = 1026
+Time Taken = 28.64117 seconds
+Performance in GFLOPS = 7.541909e-02
+
+Algorithm: dgemm1
+Matrix Size = 1026
+Time Taken = 20.02725 seconds
+Performance in GFLOPS = 1.078576e-01
+
+Algorithm: dgemm2
+Matrix Size = 1026
+Time Taken = 9.20857 seconds
+Performance in GFLOPS = 2.345740e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm3
+Matrix Size = 2052
+Time Taken = 48.35343 seconds
+Performance in GFLOPS = 3.573837e-01
+
+Algorithm: dgemm0
+Matrix Size = 2052
+Time Taken = 242.80982 seconds
+Performance in GFLOPS = 7.116981e-02
+
+Algorithm: dgemm1
+Matrix Size = 2052
+Time Taken = 143.21789 seconds
+Performance in GFLOPS = 1.206604e-01
+
+Algorithm: dgemm2
+Matrix Size = 2052
+Time Taken = 82.47583 seconds
+Performance in GFLOPS = 2.095248e-01
+
+Matrix Configs = dgemm3 & dgemm0
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm1
+Error = 0.000000
+
+Matrix Configs = dgemm3 & dgemm2
+Error = 0.000000
