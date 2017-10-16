@@ -2,7 +2,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 153.550000 s
 Performance in GFLOPS = 1.118845e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 2
 Matrix Size = 2048
 Time taken in seconds = 128.310000 s
@@ -13,7 +13,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 147.510000 s
 Performance in GFLOPS = 1.164658e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 4
 Matrix Size = 2048
 Time taken in seconds = 46.020000 s
@@ -24,7 +24,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 138.760000 s
 Performance in GFLOPS = 1.238100e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 8
 Matrix Size = 2048
 Time taken in seconds = 26.300000 s
@@ -35,7 +35,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 152.320000 s
 Performance in GFLOPS = 1.127880e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 16
 Matrix Size = 2048
 Time taken in seconds = 22.830000 s
@@ -46,7 +46,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 131.440000 s
 Performance in GFLOPS = 1.307050e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 32
 Matrix Size = 2048
 Time taken in seconds = 18.740000 s
@@ -57,7 +57,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 149.160000 s
 Performance in GFLOPS = 1.151775e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 64
 Matrix Size = 2048
 Time taken in seconds = 11.640000 s
@@ -68,7 +68,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 143.250000 s
 Performance in GFLOPS = 1.199293e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 128
 Matrix Size = 2048
 Time taken in seconds = 14.590000 s
@@ -79,7 +79,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 153.820000 s
 Performance in GFLOPS = 1.116881e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 256
 Matrix Size = 2048
 Time taken in seconds = 32.010000 s
@@ -90,7 +90,7 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 143.810000 s
 Performance in GFLOPS = 1.194623e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 512
 Matrix Size = 2048
 Time taken in seconds = 43.780000 s
@@ -101,10 +101,9 @@ Algorithm: dgemm0
 Matrix Size = 2048
 Time taken in seconds = 151.770000 s
 Performance in GFLOPS = 1.131967e-01
-Alogrithm: dgemm3
+Algorithm: Register Cache Blocking
 Block size: 1024
 Matrix Size = 2048
 Time taken in seconds = 62.350000 s
 Performance in GFLOPS = 2.755392e-01
 Error = 0.000000
-
