@@ -1,0 +1,126 @@
+
+Algorithm: dgemm0
+Matrix Size = 64
+Time Taken = 0.00510 seconds
+Performance in GFLOPS = 1.028185e-01
+
+Algorithm: dgemm1
+Matrix Size = 64
+Time Taken = 0.00306 seconds
+Performance in GFLOPS = 1.711323e-01
+
+Algorithm: dgemm2
+Matrix Size = 64
+Time Taken = 0.00128 seconds
+Performance in GFLOPS = 4.100432e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 128
+Time Taken = 0.04379 seconds
+Performance in GFLOPS = 9.578610e-02
+
+Algorithm: dgemm1
+Matrix Size = 128
+Time Taken = 0.02944 seconds
+Performance in GFLOPS = 1.424838e-01
+
+Algorithm: dgemm2
+Matrix Size = 128
+Time Taken = 0.01049 seconds
+Performance in GFLOPS = 3.998971e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 256
+Time Taken = 0.40145 seconds
+Performance in GFLOPS = 8.358403e-02
+
+Algorithm: dgemm1
+Matrix Size = 256
+Time Taken = 0.23686 seconds
+Performance in GFLOPS = 1.416643e-01
+
+Algorithm: dgemm2
+Matrix Size = 256
+Time Taken = 0.08503 seconds
+Performance in GFLOPS = 3.946262e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 512
+Time Taken = 3.59862 seconds
+Performance in GFLOPS = 7.459397e-02
+
+Algorithm: dgemm1
+Matrix Size = 512
+Time Taken = 2.30663 seconds
+Performance in GFLOPS = 1.163757e-01
+
+Algorithm: dgemm2
+Matrix Size = 512
+Time Taken = 0.95731 seconds
+Performance in GFLOPS = 2.804071e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 1024
+Time Taken = 40.28695 seconds
+Performance in GFLOPS = 5.330469e-02
+
+Algorithm: dgemm1
+Matrix Size = 1024
+Time Taken = 26.60203 seconds
+Performance in GFLOPS = 8.072630e-02
+
+Algorithm: dgemm2
+Matrix Size = 1024
+Time Taken = 10.90656 seconds
+Performance in GFLOPS = 1.968983e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time Taken = 506.03563 seconds
+Performance in GFLOPS = 3.394992e-02
+
+Algorithm: dgemm1
+Matrix Size = 2048
+Time Taken = 313.15137 seconds
+Performance in GFLOPS = 5.486123e-02
+
+Algorithm: dgemm2
+Matrix Size = 2048
+Time Taken = 125.73240 seconds
+Performance in GFLOPS = 1.366384e-01
+
+Matrix Config = dgemm0 & dgemm1
+Error = 0.000000
+
+Matrix Config = dgemm1 & dgemm2
+Error = 0.000000
