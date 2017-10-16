@@ -207,14 +207,6 @@ int main(){
     findCorrectness(arrC0,arrC1,n);
     printf("\n");
     free(arrC0);
-
-    arrC0 = (double *)calloc(sizeof(double), n*n);
-    copyMatrix(arrC2,arrC0,n);
-    matTripleikj(arrA,arrB,arrC0,n);
-    printf("\nMatrix Configs: kji & ikj\n");
-    findCorrectness(arrC0,arrC1,n);
-    printf("\n");
-    free(arrC0);
     free(arrC1);
     free(arrA);
     free(arrB);
