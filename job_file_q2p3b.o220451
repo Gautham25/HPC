@@ -4,46 +4,53 @@ BLOCKED MATRIX MULTIPLICATIONS
 Block Size= 16
 Matrix Size = 2048
 Matrix Config = Block ijk
-Time taken in seconds = 117.2100000000
+Time taken in seconds = 124.4300000000
+Performance in GFLOPS = 0.1380685460
 
 Matrix Size = 2048
 Matrix Config = Block jik
-Time taken in seconds = 105.2000000000
+Time taken in seconds = 118.1600000000
+Performance in GFLOPS = 0.1453949660
 
 Matrix Configs: Block ijk & jik
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kij
-Time taken in seconds = 88.0100000000
+Time taken in seconds = 109.0400000000
+Performance in GFLOPS = 0.1575556602
 
 Matrix Configs: Block jik & kij
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 97.7400000000
+Time taken in seconds = 121.2400000000
+Performance in GFLOPS = 0.1417013295
 
 Matrix Configs: Block kij & ikj
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block jki
-Time taken in seconds = 137.5300000000
+Time taken in seconds = 137.2700000000
+Performance in GFLOPS = 0.1251538514
 
 Matrix Configs: Block ikj & jki
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kji
-Time taken in seconds = 136.2300000000
+Time taken in seconds = 138.6900000000
+Performance in GFLOPS = 0.1238724435
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 97.5100000000
+Time taken in seconds = 112.1100000000
+Performance in GFLOPS = 0.1532411844
 
 Matrix Configs: Block kji & ikj
 Error = 0.000000
@@ -54,46 +61,53 @@ BLOCKED MATRIX MULTIPLICATIONS
 Block Size= 32
 Matrix Size = 2048
 Matrix Config = Block ijk
-Time taken in seconds = 111.2300000000
+Time taken in seconds = 109.1400000000
+Performance in GFLOPS = 0.1574112991
 
 Matrix Size = 2048
 Matrix Config = Block jik
-Time taken in seconds = 97.0600000000
+Time taken in seconds = 99.4300000000
+Performance in GFLOPS = 0.1727835581
 
 Matrix Configs: Block ijk & jik
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kij
-Time taken in seconds = 82.1600000000
+Time taken in seconds = 135.4600000000
+Performance in GFLOPS = 0.1268261419
 
 Matrix Configs: Block jik & kij
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 85.9000000000
+Time taken in seconds = 157.1100000000
+Performance in GFLOPS = 0.1093493042
 
 Matrix Configs: Block kij & ikj
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block jki
-Time taken in seconds = 120.6800000000
+Time taken in seconds = 145.9800000000
+Performance in GFLOPS = 0.1176864583
 
 Matrix Configs: Block ikj & jki
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kji
-Time taken in seconds = 112.7300000000
+Time taken in seconds = 150.0200000000
+Performance in GFLOPS = 0.1145171923
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 74.9200000000
+Time taken in seconds = 166.8800000000
+Performance in GFLOPS = 0.1029474424
 
 Matrix Configs: Block kji & ikj
 Error = 0.000000
@@ -104,46 +118,53 @@ BLOCKED MATRIX MULTIPLICATIONS
 Block Size= 64
 Matrix Size = 2048
 Matrix Config = Block ijk
-Time taken in seconds = 99.7800000000
+Time taken in seconds = 120.4600000000
+Performance in GFLOPS = 0.1426188709
 
 Matrix Size = 2048
 Matrix Config = Block jik
-Time taken in seconds = 83.1600000000
+Time taken in seconds = 103.3300000000
+Performance in GFLOPS = 0.1662621619
 
 Matrix Configs: Block ijk & jik
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kij
-Time taken in seconds = 72.4800000000
+Time taken in seconds = 119.4200000000
+Performance in GFLOPS = 0.1438609042
 
 Matrix Configs: Block jik & kij
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 77.3100000000
+Time taken in seconds = 145.8400000000
+Performance in GFLOPS = 0.1177994321
 
 Matrix Configs: Block kij & ikj
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block jki
-Time taken in seconds = 111.0500000000
+Time taken in seconds = 141.6500000000
+Performance in GFLOPS = 0.1212839335
 
 Matrix Configs: Block ikj & jki
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kji
-Time taken in seconds = 109.3100000000
+Time taken in seconds = 144.9400000000
+Performance in GFLOPS = 0.1185309037
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 75.9900000000
+Time taken in seconds = 158.7800000000
+Performance in GFLOPS = 0.1081992013
 
 Matrix Configs: Block kji & ikj
 Error = 0.000000
@@ -154,46 +175,53 @@ BLOCKED MATRIX MULTIPLICATIONS
 Block Size= 128
 Matrix Size = 2048
 Matrix Config = Block ijk
-Time taken in seconds = 99.0300000000
+Time taken in seconds = 120.9500000000
+Performance in GFLOPS = 0.1420410846
 
 Matrix Size = 2048
 Matrix Config = Block jik
-Time taken in seconds = 85.4300000000
+Time taken in seconds = 104.9600000000
+Performance in GFLOPS = 0.1636801561
 
 Matrix Configs: Block ijk & jik
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kij
-Time taken in seconds = 70.9100000000
+Time taken in seconds = 115.3900000000
+Performance in GFLOPS = 0.1488852516
 
 Matrix Configs: Block jik & kij
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 75.7200000000
+Time taken in seconds = 129.2400000000
+Performance in GFLOPS = 0.1329299689
 
 Matrix Configs: Block kij & ikj
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block jki
-Time taken in seconds = 110.7200000000
+Time taken in seconds = 138.7900000000
+Performance in GFLOPS = 0.1237831918
 
 Matrix Configs: Block ikj & jki
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kji
-Time taken in seconds = 112.0200000000
+Time taken in seconds = 145.1100000000
+Performance in GFLOPS = 0.1183920418
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 75.0100000000
+Time taken in seconds = 131.2000000000
+Performance in GFLOPS = 0.1309441249
 
 Matrix Configs: Block kji & ikj
 Error = 0.000000
@@ -204,46 +232,53 @@ BLOCKED MATRIX MULTIPLICATIONS
 Block Size= 256
 Matrix Size = 2048
 Matrix Config = Block ijk
-Time taken in seconds = 99.1600000000
+Time taken in seconds = 120.8100000000
+Performance in GFLOPS = 0.1422056881
 
 Matrix Size = 2048
 Matrix Config = Block jik
-Time taken in seconds = 130.8900000000
+Time taken in seconds = 154.7200000000
+Performance in GFLOPS = 0.1110384513
 
 Matrix Configs: Block ijk & jik
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kij
-Time taken in seconds = 86.4800000000
+Time taken in seconds = 120.2200000000
+Performance in GFLOPS = 0.1429035866
 
 Matrix Configs: Block jik & kij
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 94.6900000000
+Time taken in seconds = 147.4800000000
+Performance in GFLOPS = 0.1164894846
 
 Matrix Configs: Block kij & ikj
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block jki
-Time taken in seconds = 183.2600000000
+Time taken in seconds = 229.2100000000
+Performance in GFLOPS = 0.0749525291
 
 Matrix Configs: Block ikj & jki
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block kji
-Time taken in seconds = 180.2000000000
+Time taken in seconds = 233.2900000000
+Performance in GFLOPS = 0.0736416871
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
 Matrix Size = 2048
 Matrix Config = Block ikj
-Time taken in seconds = 95.5300000000
+Time taken in seconds = 139.9200000000
+Performance in GFLOPS = 0.1227835133
 
 Matrix Configs: Block kji & ikj
 Error = 0.000000
