@@ -148,7 +148,7 @@ int main(){
 	free(arrA);
 	free(arrB);
 	free(arrC0);
-        free(arrC1);
+	free(arrC1);
         free(arrC2);
     }
     return 0;
