@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
-
 #include<time.h>
 
 double randomNumber(int ubound, int lbound){
@@ -83,7 +82,7 @@ void regCacheMat(double *a, double *b, double *c, int n, int B){
         }
     }
     end = clock();
-    printf("Alogrithm: dgemm3\n");
+    printf("Alogrithm: Register Cache Blocking\n");
     printf("Block size: %d\n",B);
     calcPerformance(start,end,n);
 
