@@ -27,7 +27,7 @@ double* assignMatVal(double *a, int n, int ubound, int lbound){
 void calcPerformance(clock_t start, clock_t end,int n){
     printf("Matrix Size = %d\n",n);
     double time = ((double)(end-start))/CLOCKS_PER_SEC;
-    printf("Time taken in seconds = %f s\n",time);
+    printf("Time taken in seconds = %.10f s\n",time);
     double perfomance = 2*((double)pow(n,3))/(time*pow(10,9));
     printf("Performance in GFLOPS = %.10f\n",perfomance);
     printf("\n");
@@ -52,120 +52,99 @@ void findCorrectness(double *a, double *b,int n){
     printf("Error = %f\n",error);
 }
 
-void matBlockijk(double *a, double *b, double *c, int n,int B){
-    int i,j,k,i1,k1,j1;
+void matTripleijk(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (i = 0; i < n; i+=B)
-        for (j = 0; j < n; j+=B)
-            for (k = 0; k < n; k+=B)
-    /* B x B mini matrix multiplications */
-                for (i1 = i; i1 < i+B; i1++)
-                    for (j1 = j; j1 < j+B; j1++) {
-                        register double r=c[i1*n+j1];
-                        for (k1 = k; k1 < k+B; k1++)
-                            r += a[i1*n + k1]*b[k1*n + j1];
-                        c[i1*n+j1]=r;
-                    }
+    for (i=0; i<n; i++)
+        for (j=0; j<n; j++) {
+            register double r=c[i*n+j];
+            for (k=0; k<n; k++)
+                r += a[i*n+k] * b[k*n+j];
+            c[i*n+j]=r;
+    }
     end = clock();
-    calcExecutionTime(start,end,n,"Block ijk");
+    calcExecutionTime(start,end,n,"ijk");
 }
 
-void matBlockjik(double *a, double *b, double *c, int n,int B){
-    int i,j,k,i1,k1,j1;
+void matTriplejik(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (j = 0; j < n; j+=B)
-        for (i = 0; i < n; i+=B)
-            for (k = 0; k < n; k+=B)
-    /* B x B mini matrix multiplications */
-                for (j1 = j; j1 < j+B; j1++)
-                    for (i1 = i; i1 < i+B; i1++) {
-                        register double r=c[i1*n+j1];
-                        for (k1 = k; k1 < k+B; k1++)
-                            r += a[i1*n + k1]*b[k1*n + j1];
-                        c[i1*n+j1]=r;
-                    }
+    for (j=0; j<n; j++) {
+        for (i=0; i<n; i++) {
+            register double r = c[i*n+j];
+            for (k=0; k<n; k++)
+                r += a[i*n+k] * b[k*n+j];
+            c[i*n+j] = r;
+        }
+    }
     end = clock();
-    calcExecutionTime(start,end,n,"Block jik");
+    calcExecutionTime(start,end,n,"jik");
 }
 
-void matBlockkij(double *a, double *b, double *c, int n,int B){
-    int i,j,k,i1,k1,j1;
+void matTriplekij(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (k = 0; k < n; k+=B)
-        for (i = 0; i < n; i+=B)
-            for (j = 0; j < n; j+=B)
-    /* B x B mini matrix multiplications */
-                for (k1 = k; k1 < k+B; k1++)
-                    for (i1 = i; i1 < i+B; i1++) {
-                        register double r=a[i1*n+k1];
-                        for (j1 = j; j1 < j+B; j1++)
-                            c[i1*n+j1] += r*b[k1*n + j1];
-                    }
+    for (k=0; k<n; k++)
+        for (i=0; i<n; i++) {
+            register double r=a[i*n+k];
+            for (j=0; j<n; j++){
+                c[i*n+j] += r * b[k*n+j];
+            }
+
+        }
     end = clock();
-    calcExecutionTime(start,end,n,"Block kij");
+    calcExecutionTime(start,end,n,"kij");
 }
 
-void matBlockikj(double *a, double *b, double *c, int n,int B){
-    int i,j,k,i1,k1,j1;
+void matTripleikj(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (i = 0; i < n; i+=B)
-        for (k = 0; k < n; k+=B)
-            for (j = 0; j < n; j+=B)
-    /* B x B mini matrix multiplications */
-                for (i1 = i; i1 < i+B; i1++)
-                    for (k1 = k; k1 < k+B; k1++) {
-                        register double r=a[i1*n+k1];
-                        for (j1 = j; j1 < j+B; j1++)
-                            c[i1*n+j1] += r*b[k1*n + j1];
-                    }
+    for (i=0; i<n; i++)
+        for (k=0; k<n; k++) {
+            register double r= a[i*n+k];
+            for (j=0; j<n; j++)
+                c[i*n+j] += r * b[k*n+j];
+        }
     end = clock();
-    calcExecutionTime(start,end,n,"Block ikj");
+    calcExecutionTime(start,end,n,"ikj");
 }
 
-void matBlockjki(double *a, double *b, double *c, int n,int B){
-    int i,j,k,i1,k1,j1;
+void matTriplejki(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (j = 0; j < n; j+=B)
-        for (k = 0; k < n; k+=B)
-            for (i = 0; i < n; i+=B)
-    /* B x B mini matrix multiplications */
-                for (j1 = j; j1 < j+B; j1++)
-                    for (k1 = k; k1 < k+B; k1++) {
-                        register double r=b[k1*n+j1];
-                        for (i1 = i; i1 < i+B; i1++)
-                            c[i1*n+j1] += a[i1*n+k1]*r;
-                    }
+    for (j=0; j<n; j++)
+        for (k=0; k<n; k++) {
+            register double r=b[k*n+j];
+            for (i=0; i<n; i++)
+                c[i*n+j] += a[i*n+k] * r;
+    }
     end = clock();
-    calcExecutionTime(start,end,n,"Block jki");
+    calcExecutionTime(start,end,n,"jki");
 }
 
-void matBlockkji(double *a, double *b, double *c, int n, int B){
-    int i,j,k,i1,k1,j1;
+void matTriplekji(double *a, double *b, double *c, int n){
+    int i,j,k;
     double sum;
     clock_t start,end;
     start = clock();
-    for (k = 0; k < n; k+=B)
-        for (j = 0; j < n; j+=B)
-            for (i = 0; i < n; i+=B)
-    /* B x B mini matrix multiplications */
-                for (k1 = k; k1 < k+B; k1++)
-                    for (j1 = j; j1 < j+B; j1++) {
-                        register double r=b[k1*n+j1];
-                        for (i1 = i; i1 < i+B; i1++)
-                            c[i1*n+j1] += a[i1*n+k1]*r;
-                    }
+    for (k=0; k<n; k++)
+        for (j=0; j<n; j++) {
+            register double r=b[k*n+j];
+            for (i=0; i<n; i++)
+                c[i*n+j] += a[i*n+k] * r;
+        }
     end = clock();
-    calcExecutionTime(start,end,n,"Block kji");
+    calcExecutionTime(start,end,n,"kji");
 }
 
 int main(){
@@ -175,73 +154,70 @@ int main(){
     srand((double)time(NULL));
     int ubound = 100, lbound = 1;
     n=2048;
-    int B[]={16,32,64,128,256};
 
-    //Blocked matrix multiplications
-    for(i=0;i<(sizeof(B)/sizeof(B[0]));i++){
-        arrA = (double *)calloc(sizeof(double), n*n);
-        arrB = (double *)calloc(sizeof(double), n*n);
-        arrC0 = (double *)calloc(sizeof(double), n*n);
-        arrC1 = (double *)calloc(sizeof(double), n*n);
-        arrC2 = (double *)calloc(sizeof(double), n*n);
-        arrA = assignMatVal(arrA, n, ubound, lbound);
-        arrB = assignMatVal(arrB, n, ubound, lbound);
-        arrC0 = assignMatVal(arrC0, n, ubound, lbound);
-        copyMatrix(arrC0,arrC1,n);
-        copyMatrix(arrC0,arrC2,n);
-        printf("\nBLOCKED MATRIX MULTIPLICATIONS\n");
-        printf("\nBlock Size= %d\n",B[i]);
-        matBlockijk(arrA,arrB,arrC0,n,8);
-        printf("\n");
-        matBlockjik(arrA,arrB,arrC1,n,B[i]);
-        printf("\nMatrix Configs: Block ijk & jik\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrC0);
+    arrA = (double *)calloc(sizeof(double), n*n);
+    arrB = (double *)calloc(sizeof(double), n*n);
+    arrC0 = (double *)calloc(sizeof(double), n*n);
+    arrC1 = (double *)calloc(sizeof(double), n*n);
+    arrC2 = (double *)calloc(sizeof(double), n*n);
+    arrA = assignMatVal(arrA,n,ubound,lbound);
+    arrB = assignMatVal(arrB,n,ubound,lbound);
+    arrC0 = assignMatVal(arrC0,n,ubound,lbound);
+    copyMatrix(arrC0,arrC1,n);
+    copyMatrix(arrC0,arrC2,n);
 
-        arrC0 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC0,n);
-        matBlockkij(arrA,arrB,arrC0,n,B[i]);
-        printf("\nMatrix Configs: Block jik & kij\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrC1);
+    //Triple loop matrix multiplications
+    printf("\nTRIPLE LOOP MATRIX MULTIPLICATIONS\n");
+    matTripleijk(arrA,arrB,arrC0,n);
+    printf("\n");
+    matTriplejik(arrA,arrB,arrC1,n);
+    printf("\nMatrix Configs: ijk & jik\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC0);
 
-        arrC1 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC1,n);
-        matBlockikj(arrA,arrB,arrC1,n,B[i]);
-        printf("\nMatrix Configs: Block kij & ikj\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrC0);
+    arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
+    matTriplekij(arrA,arrB,arrC0,n);
+    printf("\nMatrix Configs: jik & kij\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC1);
 
-        arrC0 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC0,n);
-        matBlockjki(arrA,arrB,arrC0,n,B[i]);
-        printf("\nMatrix Configs: Block ikj & jki\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrC1);
+    arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
+    matTripleikj(arrA,arrB,arrC1,n);
+    printf("\nMatrix Configs: kij & ikj\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC0);
 
-        arrC1 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC1,n);
-        matBlockkji(arrA,arrB,arrC1,n,B[i]);
-        printf("\nMatrix Configs: Block jki & kji\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrC0);
+    arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
+    matTriplejki(arrA,arrB,arrC0,n);
+    printf("\nMatrix Configs: ikj & jki\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC1);
 
-        arrC0 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC0,n);
-        matBlockikj(arrA,arrB,arrC0,n,B[i]);
-        printf("\nMatrix Configs: Block kji & ikj\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
-        free(arrA);
-        free(arrB);
-        free(arrC0);
-        free(arrC1);
-        free(arrC2);
-    }
+    arrC1 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC1,n);
+    matTriplekji(arrA,arrB,arrC1,n);
+    printf("\nMatrix Configs: jki & kji\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC0);
+
+    arrC0 = (double *)calloc(sizeof(double), n*n);
+    copyMatrix(arrC2,arrC0,n);
+    matTripleikj(arrA,arrB,arrC0,n);
+    printf("\nMatrix Configs: kji & ikj\n");
+    findCorrectness(arrC0,arrC1,n);
+    printf("\n");
+    free(arrC0);
+    free(arrC1);
+    free(arrA);
+    free(arrB);
+
 	return 0;
 }
