@@ -47,14 +47,6 @@ Performance in GFLOPS = 0.1238724435
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
-Matrix Size = 2048
-Matrix Config = Block ikj
-Time taken in seconds = 112.1100000000
-Performance in GFLOPS = 0.1532411844
-
-Matrix Configs: Block kji & ikj
-Error = 0.000000
-
 
 BLOCKED MATRIX MULTIPLICATIONS
 
@@ -102,14 +94,6 @@ Time taken in seconds = 150.0200000000
 Performance in GFLOPS = 0.1145171923
 
 Matrix Configs: Block jki & kji
-Error = 0.000000
-
-Matrix Size = 2048
-Matrix Config = Block ikj
-Time taken in seconds = 166.8800000000
-Performance in GFLOPS = 0.1029474424
-
-Matrix Configs: Block kji & ikj
 Error = 0.000000
 
 
@@ -161,14 +145,6 @@ Performance in GFLOPS = 0.1185309037
 Matrix Configs: Block jki & kji
 Error = 0.000000
 
-Matrix Size = 2048
-Matrix Config = Block ikj
-Time taken in seconds = 158.7800000000
-Performance in GFLOPS = 0.1081992013
-
-Matrix Configs: Block kji & ikj
-Error = 0.000000
-
 
 BLOCKED MATRIX MULTIPLICATIONS
 
@@ -216,14 +192,6 @@ Time taken in seconds = 145.1100000000
 Performance in GFLOPS = 0.1183920418
 
 Matrix Configs: Block jki & kji
-Error = 0.000000
-
-Matrix Size = 2048
-Matrix Config = Block ikj
-Time taken in seconds = 131.2000000000
-Performance in GFLOPS = 0.1309441249
-
-Matrix Configs: Block kji & ikj
 Error = 0.000000
 
 
@@ -274,12 +242,3 @@ Performance in GFLOPS = 0.0736416871
 
 Matrix Configs: Block jki & kji
 Error = 0.000000
-
-Matrix Size = 2048
-Matrix Config = Block ikj
-Time taken in seconds = 139.9200000000
-Performance in GFLOPS = 0.1227835133
-
-Matrix Configs: Block kji & ikj
-Error = 0.000000
-
