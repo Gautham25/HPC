@@ -44,12 +44,3 @@ Performance in GFLOPS = 0.0317998504
 
 Matrix Configs: jki & kji
 Error = 0.000000
-
-Matrix Size = 2048
-Matrix Config = ikj
-Time taken in seconds = 104.0900000000
-Performance in GFLOPS = 0.1650482197
-
-Matrix Configs: kji & ikj
-Error = 0.000000
-
