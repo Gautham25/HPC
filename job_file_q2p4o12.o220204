@@ -1,0 +1,110 @@
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 670.160000 s
+Performance in GFLOPS = 2.563547e-02
+Alogrithm: dgemm3
+Block size: 2
+Matrix Size = 2048
+Time taken in seconds = 235.200000 s
+Performance in GFLOPS = 7.304366e-02
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 601.480000 s
+Performance in GFLOPS = 2.856266e-02
+Alogrithm: dgemm3
+Block size: 4
+Matrix Size = 2048
+Time taken in seconds = 46.960000 s
+Performance in GFLOPS = 3.658405e-01
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 601.100000 s
+Performance in GFLOPS = 2.858072e-02
+Alogrithm: dgemm3
+Block size: 8
+Matrix Size = 2048
+Time taken in seconds = 25.160000 s
+Performance in GFLOPS = 6.828247e-01
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 597.910000 s
+Performance in GFLOPS = 2.873320e-02
+Alogrithm: dgemm3
+Block size: 16
+Matrix Size = 2048
+Time taken in seconds = 15.770000 s
+Performance in GFLOPS = 1.089402e+00
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 625.230000 s
+Performance in GFLOPS = 2.747768e-02
+Alogrithm: dgemm3
+Block size: 32
+Matrix Size = 2048
+Time taken in seconds = 13.420000 s
+Performance in GFLOPS = 1.280169e+00
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 626.870000 s
+Performance in GFLOPS = 2.740579e-02
+Alogrithm: dgemm3
+Block size: 64
+Matrix Size = 2048
+Time taken in seconds = 11.530000 s
+Performance in GFLOPS = 1.490015e+00
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 624.880000 s
+Performance in GFLOPS = 2.749307e-02
+Alogrithm: dgemm3
+Block size: 128
+Matrix Size = 2048
+Time taken in seconds = 15.240000 s
+Performance in GFLOPS = 1.127288e+00
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 615.510000 s
+Performance in GFLOPS = 2.791160e-02
+Alogrithm: dgemm3
+Block size: 256
+Matrix Size = 2048
+Time taken in seconds = 29.870000 s
+Performance in GFLOPS = 5.751546e-01
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 619.700000 s
+Performance in GFLOPS = 2.772288e-02
+Alogrithm: dgemm3
+Block size: 512
+Matrix Size = 2048
+Time taken in seconds = 40.100000 s
+Performance in GFLOPS = 4.284257e-01
+Error = 0.000000
+
+Algorithm: dgemm0
+Matrix Size = 2048
+Time taken in seconds = 572.640000 s
+Performance in GFLOPS = 3.000117e-02
+Alogrithm: dgemm3
+Block size: 1024
+Matrix Size = 2048
+Time taken in seconds = 56.120000 s
+Performance in GFLOPS = 3.061274e-01
+Error = 0.000000
+
