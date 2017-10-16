@@ -229,14 +229,6 @@ int main(){
         printf("\nMatrix Configs: Block jki & kji\n");
         findCorrectness(arrC0,arrC1,n);
         printf("\n");
-        free(arrC0);
-
-        arrC0 = (double *)calloc(sizeof(double), n*n);
-        copyMatrix(arrC2,arrC0,n);
-        matBlockikj(arrA,arrB,arrC0,n,B[i]);
-        printf("\nMatrix Configs: Block kji & ikj\n");
-        findCorrectness(arrC0,arrC1,n);
-        printf("\n");
         free(arrA);
         free(arrB);
         free(arrC0);
